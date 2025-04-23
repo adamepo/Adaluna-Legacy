@@ -2,16 +2,16 @@
 
 /* Override styles for EPO page */
 body {
-    background: linear-gradient(135deg, #001f3f 0%, #000b1a 100%);
+    background: linear-gradient(135deg, #1a0033 0%, #000000 100%);
     color: #fff;
 }
 
 header {
-    background-color: rgba(0, 31, 63, 0.95);
+    background-color: rgba(26, 0, 51, 0.95);
 }
 
 .back-button {
-    color: #007bff;
+    color: #b366ff;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -25,31 +25,31 @@ header {
 
 .waitlist-button {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #b366ff;
     color: white;
-    padding: 15px 40px;
+    padding: 20px 50px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
-    margin-top: 30px;
+    font-size: 1.3rem;
+    margin-top: 40px;
     transition: all 0.3s ease;
     border: 2px solid transparent;
 }
 
 .waitlist-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(179, 102, 255, 0.3);
     background-color: transparent;
-    border-color: #007bff;
+    border-color: #b366ff;
 }
 
 .hero {
-    background: linear-gradient(135deg, #001f3f 0%, #000b1a 100%);
-    min-height: calc(100vh - 100px);
+    background: linear-gradient(135deg, #4a0072 0%, #000000 100%);
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 200px 0;
+    padding: 0;
     position: relative;
 }
 
@@ -60,26 +60,49 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(0, 31, 63, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background: radial-gradient(circle at 50% 50%, rgba(102, 0, 204, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 .tagline {
-    color: #007bff;
-    font-size: 24px;
+    color: #b366ff;
+    font-size: 2rem;
     font-weight: bold;
-    margin: 10px 0 40px;
+    margin: 25px 0 50px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
+.hero-content p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin: 30px auto;
+    max-width: 800px;
+}
+
 .coming-soon {
     display: inline-block;
-    background: rgba(0, 123, 255, 0.2);
-    color: #007bff;
-    padding: 5px 15px;
+    background: rgba(179, 102, 255, 0.2);
+    color: #b366ff;
+    padding: 6px 18px;
     border-radius: 20px;
     margin-bottom: 30px;
-    font-size: 14px;
+    font-size: 1.1rem;
     font-weight: bold;
 }
 
@@ -130,56 +153,4 @@ nav {
     margin-left: 15px;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.features {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #000b1a 0%, #001f3f 100%);
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-    color: white;
-    font-size: 36px;
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.feature-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    border-radius: 15px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 123, 255, 0.1);
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(0, 123, 255, 0.3);
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
-}
-
-.feature-card h3 {
-    color: #007bff;
-    margin-bottom: 15px;
-    font-size: 24px;
-}
-
-.feature-card p {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-} 
+/* Remove all features-related styles */ 
