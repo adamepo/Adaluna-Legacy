@@ -8,17 +8,20 @@
 body {
     background-color: #000;
     color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 header {
     background-color: rgba(0, 31, 63, 0.95);
-    padding: 20px 0;
+    padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -32,7 +35,7 @@ nav {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
     color: white;
     display: flex;
@@ -54,6 +57,7 @@ nav {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 1.1rem;
 }
 
 .nav-links a:hover {
@@ -113,11 +117,14 @@ nav {
 .hero-content {
     position: relative;
     z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 .mission-statement {
@@ -126,7 +133,8 @@ nav {
     max-width: 800px;
     margin: 0 auto 30px;
     text-align: center;
-    font-size: 20px;
+    font-size: 1.3rem;
+    line-height: 1.6;
 }
 
 .founders {
@@ -164,26 +172,19 @@ nav {
     object-fit: cover;
     margin-bottom: 20px;
     border: 3px solid #007bff;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .founder-card h3 {
     color: #007bff;
     margin: 20px 0 10px;
-    width: 100%;
+    font-size: 1.5rem;
 }
 
 .founder-card .role {
     color: rgba(255, 255, 255, 0.7);
     font-style: italic;
     margin-bottom: 15px;
-    width: 100%;
-}
-
-.founder-card p {
-    width: 100%;
+    font-size: 1.1rem;
 }
 
 footer {
@@ -193,11 +194,15 @@ footer {
     text-align: center;
 }
 
+footer p {
+    font-size: 1rem;
+}
+
 .section-title {
     text-align: center;
     margin-bottom: 60px;
     color: white;
-    font-size: 36px;
+    font-size: 2.5rem;
 }
 
 .products {
@@ -218,7 +223,7 @@ footer {
 
 .product-card h3 {
     color: #007bff;
-    font-size: 32px;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
@@ -229,13 +234,15 @@ footer {
     padding: 5px 15px;
     border-radius: 20px;
     margin-bottom: 20px;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: bold;
 }
 
 .product-card p {
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .product-features {
@@ -254,6 +261,12 @@ footer {
 .product-feature h4 {
     color: #007bff;
     margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.product-feature p {
+    font-size: 1rem;
+    margin-bottom: 0;
 }
 
 .product-card .cta-button {
@@ -264,9 +277,10 @@ footer {
     border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.1rem;
     transition: all 0.3s ease;
     border: 2px solid transparent;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .product-card .cta-button:hover {
@@ -274,4 +288,152 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
     background-color: transparent;
     border-color: #007bff;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .mission-statement {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .product-card h3 {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    .hero {
+        padding: 150px 0 80px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .mission-statement {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .product-card {
+        padding: 30px;
+    }
+
+    .product-card h3 {
+        font-size: 2rem;
+    }
+
+    .product-features {
+        grid-template-columns: 1fr;
+    }
+
+    .founders-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .founder-card {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding: 120px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .mission-statement {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .product-card {
+        padding: 20px;
+    }
+
+    .product-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .product-card .status {
+        font-size: 0.9rem;
+    }
+
+    .product-card p {
+        font-size: 1rem;
+    }
+
+    .product-feature h4 {
+        font-size: 1.1rem;
+    }
+
+    .product-feature p {
+        font-size: 0.9rem;
+    }
+
+    .product-card .cta-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    .founder-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .founder-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .founder-card .role {
+        font-size: 1rem;
+    }
 } 
