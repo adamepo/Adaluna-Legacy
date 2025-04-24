@@ -1,5 +1,26 @@
 @import url('styles.css');
 
+/* Font overrides for the EPO page */
+.waitlist-button,
+.back-button,
+.inter-font,
+.tagline,
+.coming-soon,
+.mission-statement,
+.feature-card h4,
+.feature-card p {
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* More specific selector for EPO text */
+h1.epo-text, 
+.epo-text, 
+h3.epo-text,
+.product-card h3.epo-text,
+a.epo-text {
+    font-family: 'Inter', sans-serif !important;
+}
+
 /* Base styles */
 body {
     background: linear-gradient(135deg, #4a0072 0%, #000000 100%);
@@ -149,6 +170,14 @@ nav {
         padding: 18px 45px;
         font-size: 1.2rem;
     }
+    
+    .feature-cards {
+        gap: 20px;
+    }
+    
+    .feature-card h4 {
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -175,6 +204,19 @@ nav {
         padding: 15px 40px;
         font-size: 1.1rem;
         margin-top: 30px;
+    }
+    
+    .feature-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 30px auto;
+    }
+    
+    .feature-card {
+        padding: 25px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -214,13 +256,25 @@ nav {
     .back-button {
         font-size: 1rem;
     }
+    
+    .feature-card {
+        padding: 20px;
+    }
+    
+    .feature-card h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .feature-card p {
+        font-size: 0.9rem;
+    }
 }
 
 /* Remove all features-related styles */
 .features,
 .section-title,
-.feature-grid,
-.feature-card {
+.feature-grid {
     display: none;
 }
 
@@ -242,4 +296,41 @@ nav {
     font-weight: bold;
     margin-right: auto;
     margin-left: 15px;
+}
+
+/* Feature Cards */
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 40px auto;
+    max-width: 900px;
+    width: 100%;
+}
+
+.feature-card {
+    background: rgba(179, 102, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(179, 102, 255, 0.2);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(179, 102, 255, 0.15);
+}
+
+.feature-card h4 {
+    color: #b366ff;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.5;
 } 

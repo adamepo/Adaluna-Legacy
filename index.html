@@ -14,12 +14,17 @@
                     <img src="images/logo.png" alt="Adaluna Legacy Logo">
                     Adaluna Legacy
                 </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <div class="nav-links">
                     <a href="#home">Home</a>
                     <div class="dropdown">
                         <a href="#">Our Apps</a>
                         <div class="dropdown-content">
-                            <a href="epo.html">EPO</a>
+                            <a href="epo.html" class="epo-text">EPO</a>
                         </div>
                     </div>
                     <a href="#team">Our Team</a>
@@ -40,24 +45,10 @@
         <div class="container">
             <h2 class="section-title">Our Products</h2>
             <div class="product-card">
-                <h3>EPO</h3>
+                <h3 class="epo-text">EPO</h3>
                 <span class="status">Coming Soon</span>
-                <p>A revolutionary app designed to help students reduce screen time and find balance in their digital lives.</p>
-                <div class="product-features">
-                    <div class="product-feature">
-                        <h4>Screen Time Management</h4>
-                        <p>Take control of your digital habits</p>
-                    </div>
-                    <div class="product-feature">
-                        <h4>Student Focused</h4>
-                        <p>Designed specifically for academic success</p>
-                    </div>
-                    <div class="product-feature">
-                        <h4>Digital Wellness</h4>
-                        <p>Find balance in your digital life</p>
-                    </div>
-                </div>
-                <a href="epo.html" class="cta-button">Learn More</a>
+                <p>A revolutionary app designed to help students reduce digital distractions and enjoy peace offline.</p>
+                <a href="epo.html" class="cta-button inter-font">Learn More</a>
             </div>
         </div>
     </section>
@@ -85,5 +76,48 @@
             <p>&copy; 2024 Adaluna Legacy. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            // Toggle menu
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Handle dropdowns
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        this.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+                }
+            });
+
+            // Close menu when clicking a link
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+                });
+            });
+        });
+    </script>
 </body>
 </html> 

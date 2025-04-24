@@ -1,8 +1,32 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
+}
+
+/* EPO specific styling - more specific selectors to override other styles */
+h1.epo-text, 
+h3.epo-text, 
+.epo-text, 
+a[href="epo.html"]:not(.cta-button):not(.inter-font), 
+.product-card h3.epo-text,
+a.epo-text {
+    font-family: 'Inter', serif !important;
+    color: #ffffff;
+}
+
+/* Ensure all buttons and links use Inter font */
+.cta-button, 
+.nav-links a:not(.epo-text),
+.waitlist-button,
+.back-button,
+.inter-font {
+    font-family: 'Inter', sans-serif !important;
 }
 
 body {
@@ -133,7 +157,7 @@ nav {
     max-width: 800px;
     margin: 0 auto 30px;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     line-height: 1.6;
 }
 
@@ -241,7 +265,7 @@ footer p {
 .product-card p {
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 30px;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
 }
 
@@ -290,6 +314,53 @@ footer p {
     border-color: #007bff;
 }
 
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span:nth-child(3) {
+    bottom: 0;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 9px;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: 9px;
+}
+
 /* Media Queries */
 @media screen and (max-width: 1024px) {
     .hero h1 {
@@ -310,12 +381,52 @@ footer p {
 }
 
 @media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
     .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background: rgba(0, 31, 63, 0.95);
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        transition: right 0.3s ease;
         gap: 20px;
     }
 
+    .nav-links.active {
+        right: 0;
+    }
+
     .nav-links a {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        padding: 10px 0;
+        display: none;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        padding: 8px 0;
     }
 
     .hero {
